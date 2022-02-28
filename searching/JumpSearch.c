@@ -1,7 +1,7 @@
 /**
- * @file LinearSearch.c
+ * @file JumpSearch.c
  * @author Rohan Verma (rohanvermaara@gmail.com)
- * @brief time complexity: O(n)
+ * @brief 
  * @version 0.1
  * @date 2022-02-28
  * 
@@ -11,16 +11,17 @@
 
 #include <stdio.h>
 #include "Searching.h"
-#define ELEMENTS 159, 245, 466, 472, 483, 691, 756, 862, 969, 974
-#define SEARCHELEMENT 691
+
+#define ELEMENTS 11, 89, 406, 472, 570, 593, 670, 711, 738, 875
+#define SEARCHELEMENTS 593
 #define SIZE 10
 
 int main() {
     int arr[] = {ELEMENTS};
-    int se = SEARCHELEMENT;
+    int se = SEARCHELEMENTS;
     int idx=-1;
 
-    if((idx=LinearSearch(arr, SIZE, se))==-1) {
+    if((idx=JumpSearch(arr, SIZE, se))==-1) {
         printf("Search Element %d not found\n", se);
     }
     else {        
