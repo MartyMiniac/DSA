@@ -8,3 +8,6 @@ all:
 
 LinearSearch: LinearSearch.c
 	$(CC) $(CFLAGS) -o $(TARGET) LinearSearch.c
+
+BinarySearch: BinarySearch.c
+	$(CC) $(CFLAGS) -o $(TARGET) BinarySearch.c
