@@ -14,17 +14,29 @@
 #define SEARCHELEMENT 691
 #define SIZE 10
 
+int LinearSearch(const int * arr, int size, int se);
+
 int main() {
     int arr[] = {ELEMENTS};
     int se = SEARCHELEMENT;
-    
-    for(int i=0; i<SIZE; i++) {
+    int idx=-1;
+
+    if((idx=LinearSearch(arr, SIZE, se))==-1) {
+        printf("Search Element %d not found\n", se);
+    }
+    else {        
+        printf("Element %d found at index %d\n", se, idx);
+    }
+
+    return 0;
+}
+
+int LinearSearch(const int * arr, int size, int se) {
+    for(int i=0; i<size; i++) {
         if(arr[i]==se) {
-            printf("Element %d found at index %d\n", se, i);
-            return 0;
+            return i;
         }
     }
 
-    printf("Search Element %d not found\n", se);
-    return 0;
+    return -1;
 }

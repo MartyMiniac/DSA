@@ -14,18 +14,32 @@
 #define SEARCHELEMENT 524
 #define SIZE 10
 
+int BinarySearch(const int * arr, int size, int se);
+
 int main() {
     int arr[] = {ELEMENTS};
     int se = SEARCHELEMENT;
+    int idx=-1;
 
-    int start=0, end=SIZE;
+    if((idx=BinarySearch(arr, SIZE, se))==-1) {
+        printf("Search Element %d not found\n", se);
+    }
+    else {
+        printf("Search element %d found at location %d\n", se, idx);
+    }
+
+    return 0;
+}
+
+int BinarySearch(const int * arr, int size, int se) {
+    
+    int start=0, end=size;
     
     while(start<=end) {
         int mid=(start+end)/2;
         int me=arr[mid];
         if(se==me) {
-            printf("Search element %d found at location %d\n", se, mid);
-            return 0;
+            return mid;
         }
         else if(se<me) {
             end=mid-1;
@@ -36,6 +50,5 @@ int main() {
 
     }
 
-    printf("Search Element %d not found\n", se);
-    return 0;
+    return -1;
 }
