@@ -1,7 +1,7 @@
 /**
  * @file JumpSearch.c
  * @author Rohan Verma (rohanvermaara@gmail.com)
- * @brief 
+ * @brief Time Complexity: O(sqrt(n))
  * @version 0.1
  * @date 2022-02-28
  * 
