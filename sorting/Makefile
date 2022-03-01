@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -Wall -g
 TARGET = app
-OBJS = Sorting.o SelectionSort.o BubbleSort.o InsertionSort.o RecursiveBubbleSort.o
+OBJS = Sorting.o SelectionSort.o BubbleSort.o InsertionSort.o RecursiveBubbleSort.o RecursiveInsertionSort.o
 
 all:
 	$(info Enter a recipe to run like "Make SelectionSort")
@@ -25,6 +25,10 @@ RecursiveBubbleSort: Sorting.o RecursiveBubbleSort.c
 InsertionSort: Sorting.o InsertionSort.c
 	$(CC) $(CFLAGS) -c InsertionSort.c
 	$(CC) $(CFLAGS) -o $(TARGET) Sorting.o InsertionSort.o
+
+RecursiveInsertionSort: Sorting.o RecursiveInsertionSort.c
+	$(CC) $(CFLAGS) -c RecursiveInsertionSort.c
+	$(CC) $(CFLAGS) -o $(TARGET) Sorting.o RecursiveInsertionSort.o
 
 clean:
 	del $(OBJS)
