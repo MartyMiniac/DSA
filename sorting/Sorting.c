@@ -23,6 +23,22 @@ void BubbleSort(int * arr, int size) {
     }
 }
 
+void RecursiveBubbleSort(int * arr, int size) {
+    //base case condition
+    if(size==1) {
+        return;
+    }
+
+    for(int i=0; i<size-1; i++) {
+        if(arr[i+1]<arr[i]) {
+            swap(&arr[i+1], &arr[i]);
+        }
+    }
+
+    //recursive condition
+    RecursiveBubbleSort(arr, size-1);
+}
+
 void InsertionSort(int * arr, int size) {
     for(int i=1; i<size; i++) {
         int j=i-1;

@@ -3,6 +3,7 @@
 
 void SelectionSort(int * arr, int size);
 void BubbleSort(int * arr, int size);
+void RecursiveBubbleSort(int * arr, int size);
 void InsertionSort(int * arr, int size);
 
 #endif
