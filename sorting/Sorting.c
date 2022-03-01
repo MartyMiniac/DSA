@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include <stdio.h>
+
 
 void swap(int * a, int * b);
 
@@ -66,8 +69,58 @@ void RecursiveInsertionSort(int * arr, int size) {
         arr[j+1] = arr[j];
         j--;
     }
-    
+
     arr[j+1] = last;
+}
+
+void merge(int * arr, int l, int m, int r);
+void MergeSort(int * arr, int l, int r) {
+    //base case
+    if(l>=r) {
+        return;
+    }
+
+    int m = l+(r-l)/2;
+    MergeSort(arr, l, m);
+    MergeSort(arr, m+1, r);
+    merge(arr, l, m, r);
+}
+
+void merge(int * arr, int l, int m, int r) {
+    int arrLSize = m-l+1;
+    int arrRSize = r-m;
+
+    int * arrL = malloc(arrLSize * sizeof(int));
+    int * arrR = malloc(arrRSize * sizeof(int));
+
+    for(int i=0; i<arrLSize; i++) {
+        arrL[i]=arr[i+l];
+    }
+    for(int i=0; i<arrRSize; i++) {
+        arrR[i]=arr[m+1+l];
+    }
+
+    int idxL = 0, idxR = 0, idx = l;
+
+    while(idxL<arrLSize && idxR<arrRSize) {
+        if(arrL[idxL] < arrR[idxR]) {
+            arr[idx++]=arrL[idxL++];
+        }
+        else {
+            arr[idx++]=arrR[idxR++];
+        }
+    }
+
+    for(int i=idxL; i<arrLSize; i++) {
+        arr[idx++]=arrL[idxL];
+    }
+    for(int i=idxR; i<arrRSize; i++) {
+        arr[idx++]=arrR[idxR];
+    }
+
+    free(arrL);
+    free(arrR);
+
 }
 
 
