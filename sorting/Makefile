@@ -18,6 +18,9 @@ BubbleSort: Sorting.o BubbleSort.c
 	$(CC) $(CFLAGS) -c BubbleSort.c
 	$(CC) $(CFLAGS) -o $(TARGET) Sorting.o BubbleSort.o
 
+InsertionSort: Sorting.o InsertionSort.c
+	$(CC) $(CFLAGS) -c InsertionSort.c
+	$(CC) $(CFLAGS) -o $(TARGET) Sorting.o InsertionSort.o
 
 clean:
 	del $(OBJS)
