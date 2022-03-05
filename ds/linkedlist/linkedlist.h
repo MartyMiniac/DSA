@@ -1,3 +1,13 @@
+/**
+ * @file linkedlist.h
+ * @author Rohan Verma (rohanvermaara@gmail.com)
+ * @version 0.1
+ * @date 2022-03-05
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
+
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
 
